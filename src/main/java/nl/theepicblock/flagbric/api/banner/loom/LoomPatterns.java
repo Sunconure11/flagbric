@@ -1,9 +1,10 @@
-
+package nl.theepicblock.flagbric.api.banner.loom;
 
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
 
-import static cf.witcheskitchen.api.banner.WKBannerRegistry.LOOM_PATTERN_REGISTRY;
+import static nl.theepicblock.flagbric.api.banner.FlagbricBannerRegistry.LOOM_PATTERN_REGISTRY;
+
 
 /**
  * API location of the loom pattern registry.

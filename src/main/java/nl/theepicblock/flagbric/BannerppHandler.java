@@ -1,10 +1,9 @@
 package nl.theepicblock.flagbric;
 
-import io.github.fablabsmc.fablabs.impl.bannerpattern.LoomPatternConversions;
-import io.github.fablabsmc.fablabs.impl.bannerpattern.LoomPatternRenderContext;
-import net.minecraft.item.ItemStack;
 
-import java.awt.*;
+import net.minecraft.item.ItemStack;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternConversions;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternRenderContext;
 
 public class BannerppHandler {
     public static void onPreRender(ItemStack stack) {

@@ -1,4 +1,4 @@
-
+package nl.theepicblock.flagbric.api.banner.loom;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;

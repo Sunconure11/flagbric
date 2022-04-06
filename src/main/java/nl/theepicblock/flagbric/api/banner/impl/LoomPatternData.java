@@ -1,5 +1,7 @@
+package nl.theepicblock.flagbric.api.banner.impl;
 
 import net.minecraft.util.DyeColor;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPattern;
 
 /**
  * Class to store loom pattern data in the banner - its pattern,

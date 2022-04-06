@@ -1,4 +1,4 @@
-
+package nl.theepicblock.flagbric.api.banner.impl;
 
 import net.minecraft.nbt.NbtList;
 

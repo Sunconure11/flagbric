@@ -2,7 +2,6 @@ package nl.theepicblock.flagbric;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ScaffoldingBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
@@ -13,7 +12,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -48,7 +46,7 @@ public class FlagItem extends BlockItem {
                 if (!world.isClient) {
                     int j = world.getHeight();
                     if (playerEntity instanceof ServerPlayerEntity && mPos.getY() >= j) {
-                        GameMessageS2CPacket gameMessageS2CPacket = new GameMessageS2CPacket((new TranslatableText("build.tooHigh", new Object[]{j})).formatted(Formatting.RED), MessageType.GAME_INFO, Util.NIL_UUID);
+                        GameMessageS2CPacket gameMessageS2CPacket = new GameMessageS2CPacket((new TranslatableText("build.tooHigh", j)).formatted(Formatting.RED), MessageType.GAME_INFO, Util.NIL_UUID);
                         ((ServerPlayerEntity) playerEntity).networkHandler.sendPacket(gameMessageS2CPacket);
                     }
                 }

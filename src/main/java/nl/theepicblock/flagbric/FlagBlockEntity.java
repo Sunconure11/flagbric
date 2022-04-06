@@ -1,6 +1,5 @@
 package nl.theepicblock.flagbric;
 
-import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,7 +10,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
-public class FlagBlockEntity extends BlockEntity implements Inventory, BlockEntityClientSerializable {
+public class FlagBlockEntity extends BlockEntity implements Inventory {
     private ItemStack banner = ItemStack.EMPTY;
     private Direction direction = Direction.NORTH;
 
@@ -48,7 +47,7 @@ public class FlagBlockEntity extends BlockEntity implements Inventory, BlockEnti
         if (slot == 0) {
             ItemStack a = banner.copy();
             banner = ItemStack.EMPTY;
-            this.sync();
+            this.toUpdatePacket();
             return a;
         } else {
             return ItemStack.EMPTY;
@@ -59,7 +58,7 @@ public class FlagBlockEntity extends BlockEntity implements Inventory, BlockEnti
     public void setStack(int slot, ItemStack stack) {
         if (slot == 0) {
             banner = stack;
-            this.sync();
+            this.toUpdatePacket();
         }
     }
 
@@ -71,7 +70,7 @@ public class FlagBlockEntity extends BlockEntity implements Inventory, BlockEnti
     @Override
     public void clear() {
         this.banner = ItemStack.EMPTY;
-        this.sync();
+        this.toUpdatePacket();
     }
 
     @Override
@@ -108,19 +107,9 @@ public class FlagBlockEntity extends BlockEntity implements Inventory, BlockEnti
     }
 
     @Override
-    public NbtCompound writeNbt(NbtCompound tag) {
+    public void writeNbt(NbtCompound tag) {
         tag.put("item", banner.writeNbt(new NbtCompound()));
         tag.putFloat("direction", direction.asRotation());
-        return super.writeNbt(tag);
-    }
-
-    @Override
-    public void fromClientTag(NbtCompound compoundTag) {
-        this.readNbt(compoundTag);
-    }
-
-    @Override
-    public NbtCompound toClientTag(NbtCompound compoundTag) {
-        return writeNbt(compoundTag);
+        super.writeNbt(tag);
     }
 }

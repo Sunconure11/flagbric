@@ -1,4 +1,4 @@
-
+package nl.theepicblock.flagbric.api.banner.loom;
 
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;

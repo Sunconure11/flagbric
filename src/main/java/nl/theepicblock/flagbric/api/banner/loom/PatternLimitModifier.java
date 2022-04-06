@@ -1,3 +1,4 @@
+package nl.theepicblock.flagbric.api.banner.loom;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

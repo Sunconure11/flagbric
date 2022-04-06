@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -16,8 +15,13 @@ import net.minecraft.util.registry.Registry;
 import static net.minecraft.block.Blocks.OAK_PLANKS;
 
 public class Flagbric implements ModInitializer {
+    public static final String MODID = "flagbric";
     public static Block FLAG_BLOCK = new FlagBlock(FabricBlockSettings.of(Material.WOOD, OAK_PLANKS.getDefaultMapColor()).strength(1.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static BlockEntityType<FlagBlockEntity> FLAG_BLOCK_ENTITY;
+
+    public static Identifier id(String name) {
+        return new Identifier(MODID, name);
+    }
 
     @Override
     public void onInitialize() {

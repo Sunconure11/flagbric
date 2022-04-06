@@ -1,4 +1,4 @@
-package paperdomo101.lightstones.mixin.block;
+package nl.theepicblock.flagbric.mixin.block;
 
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BannerPattern;
@@ -14,6 +14,12 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.DyeColor;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternContainer;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternsInternal;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPattern;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPatternProvider;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPatterns;
+import nl.theepicblock.flagbric.api.banner.loom.PatternLimitModifier;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,12 +27,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import paperdomo101.lightstones.api.banner.impl.LoomPatternContainer;
-import paperdomo101.lightstones.api.banner.impl.LoomPatternsInternal;
-import paperdomo101.lightstones.api.banner.loom.LoomPattern;
-import paperdomo101.lightstones.api.banner.loom.LoomPatternProvider;
-import paperdomo101.lightstones.api.banner.loom.LoomPatterns;
-import paperdomo101.lightstones.api.banner.loom.PatternLimitModifier;
 
 @Mixin(LoomScreenHandler.class)
 public abstract class LoomContainerMixin extends ScreenHandler {

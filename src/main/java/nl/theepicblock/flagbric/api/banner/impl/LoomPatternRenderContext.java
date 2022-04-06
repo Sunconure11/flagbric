@@ -1,4 +1,4 @@
-
+package nl.theepicblock.flagbric.api.banner.impl;
 
 import java.util.Collections;
 import java.util.List;

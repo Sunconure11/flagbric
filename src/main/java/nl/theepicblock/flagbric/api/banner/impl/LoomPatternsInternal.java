@@ -1,4 +1,7 @@
+package nl.theepicblock.flagbric.api.banner.impl;
 
+import nl.theepicblock.flagbric.api.banner.loom.LoomPattern;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPatterns;
 
 import java.util.ArrayList;
 import java.util.List;

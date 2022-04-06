@@ -1,4 +1,4 @@
-package paperdomo101.lightstones.mixin.client;
+package nl.theepicblock.flagbric.mixin.client;
 
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
@@ -6,6 +6,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternContainer;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternConversions;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -13,9 +16,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import paperdomo101.lightstones.api.banner.impl.LoomPatternContainer;
-import paperdomo101.lightstones.api.banner.impl.LoomPatternConversions;
-import paperdomo101.lightstones.api.banner.impl.LoomPatternData;
 
 import java.util.Collections;
 import java.util.List;

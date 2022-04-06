@@ -1,3 +1,4 @@
+package nl.theepicblock.flagbric.api.banner;
 
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
@@ -10,13 +11,18 @@ import net.minecraft.loot.function.CopyNbtLootFunction;
 import net.minecraft.loot.provider.nbt.ContextLootNbtProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import nl.theepicblock.flagbric.Flagbric;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternContainer;
+import nl.theepicblock.flagbric.api.banner.impl.LoomPatternsInternal;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPattern;
+import nl.theepicblock.flagbric.api.banner.loom.LoomPatterns;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class WKBannerRegistry {
+public class FlagbricBannerRegistry {
     public static final Registry<LoomPattern> LOOM_PATTERN_REGISTRY = FabricRegistryBuilder
-            .createSimple(LoomPattern.class, new Identifier(WK.MODID, "loom_patterns"))
+            .createSimple(LoomPattern.class, new Identifier(Flagbric.MODID, "loom_patterns"))
             .attribute(RegistryAttribute.SYNCED)
             .buildAndRegister();
 
