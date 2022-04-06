@@ -7,6 +7,9 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.BannerItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.Packet;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -98,13 +101,13 @@ public class FlagBlockEntity extends BlockEntity implements Inventory {
 
     @Override
     public void readNbt(NbtCompound tag) {
+        super.readNbt(tag);
         if (tag.contains("item", 10)) {
             banner = ItemStack.fromNbt(tag.getCompound("item"));
         }
         if (tag.contains("direction")) {
             direction = Direction.fromRotation(tag.getFloat("direction"));
         }
-        super.readNbt(tag);
     }
 
     private void sync() {
@@ -118,5 +121,9 @@ public class FlagBlockEntity extends BlockEntity implements Inventory {
         super.writeNbt(nbt);
         nbt.put("item", banner.writeNbt(new NbtCompound()));
         nbt.putFloat("direction", direction.asRotation());
+    }
+
+    public Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this, BlockEntity::createNbt);
     }
 }

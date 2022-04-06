@@ -60,7 +60,7 @@ public class FlagBlock extends BlockWithEntity implements Waterloggable {
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {
-            world.getFluidTickScheduler().scheduleTick(OrderedTick.create(Fluids.WATER, pos));
+            world.createAndScheduleBlockTick(pos, Blocks.WATER, Fluids.WATER.getTickRate(world));
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
