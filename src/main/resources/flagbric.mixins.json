@@ -4,7 +4,7 @@
   "package": "nl.theepicblock.flagbric.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "PlayerInventoryAccessor"
+    "PlayerInventoryAccessor",
     "block.BannerBlockEntityMixin",
     "block.LoomContainerMixin",
     "block.LoomContainerPatternSlotMixin"
