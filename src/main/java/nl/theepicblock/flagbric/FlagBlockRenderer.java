@@ -1,7 +1,6 @@
 package nl.theepicblock.flagbric;
 
 import com.mojang.datafixers.util.Pair;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.client.model.ModelPart;
@@ -22,7 +21,6 @@ import net.minecraft.util.math.Vec3f;
 import java.util.List;
 
 public class FlagBlockRenderer implements BlockEntityRenderer<FlagBlockEntity> {
-    private static final boolean BANNERPP = FabricLoader.getInstance().isModLoaded("bannerpp");
     private final ModelPart banner;
 
     public FlagBlockRenderer(BlockEntityRendererFactory.Context ctx) {
@@ -38,10 +36,7 @@ public class FlagBlockRenderer implements BlockEntityRenderer<FlagBlockEntity> {
 
             DyeColor color = ((BannerItem) stack.getItem()).getColor();
             List<Pair<BannerPattern, DyeColor>> list = BannerBlockEntity.getPatternsFromNbt(color, BannerBlockEntity.getPatternListNbt(stack));
-
-            if (BANNERPP) {
-                BannerppHandler.onPreRender(stack);
-            }
+            BannerppHandler.onPreRender(stack);
 
             matrices.push();
 
