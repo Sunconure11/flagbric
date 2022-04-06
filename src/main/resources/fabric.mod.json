@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "flagbric",
   "version": "${version}",
-
   "name": "flagbric",
   "description": "flags on fabric!",
   "authors": [
@@ -12,10 +11,8 @@
     "homepage": "https://github.com/TheEpicBlock/flagbric/blob/master/README.md",
     "sources": "https://github.com/TheEpicBlock/flagbric"
   },
-
   "license": "CC0-1.0",
   "icon": "assets/flagbric/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -28,7 +25,6 @@
   "mixins": [
     "flagbric.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",

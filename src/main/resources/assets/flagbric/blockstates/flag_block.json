@@ -1,6 +1,8 @@
 {
   "variants": {
-    "": { "model": "flagbric:block/flag_block" }
+    "": {
+      "model": "flagbric:block/flag_block"
+    }
   }
 }
 

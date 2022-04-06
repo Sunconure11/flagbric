@@ -16,14 +16,14 @@ import net.minecraft.util.registry.Registry;
 import static net.minecraft.block.Blocks.OAK_PLANKS;
 
 public class Flagbric implements ModInitializer {
-	public static Block FLAG_BLOCK = new FlagBlock(FabricBlockSettings.of(Material.WOOD, OAK_PLANKS.getDefaultMapColor()).strength(1.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
-	public static BlockEntityType<FlagBlockEntity> FLAG_BLOCK_ENTITY;
+    public static Block FLAG_BLOCK = new FlagBlock(FabricBlockSettings.of(Material.WOOD, OAK_PLANKS.getDefaultMapColor()).strength(1.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
+    public static BlockEntityType<FlagBlockEntity> FLAG_BLOCK_ENTITY;
 
-	@Override
-	public void onInitialize() {
-		Registry.register(Registry.BLOCK, new Identifier("flagbric", "flag_block"), FLAG_BLOCK);
-		Registry.register(Registry.ITEM, new Identifier("flagbric", "flag_block"), new FlagItem(FLAG_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+    @Override
+    public void onInitialize() {
+        Registry.register(Registry.BLOCK, new Identifier("flagbric", "flag_block"), FLAG_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier("flagbric", "flag_block"), new FlagItem(FLAG_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
 
-		FLAG_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "flagbric:flag_block_entity", FabricBlockEntityTypeBuilder.create(FlagBlockEntity::new, FLAG_BLOCK).build(null));
-	}
+        FLAG_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "flagbric:flag_block_entity", FabricBlockEntityTypeBuilder.create(FlagBlockEntity::new, FLAG_BLOCK).build(null));
+    }
 }

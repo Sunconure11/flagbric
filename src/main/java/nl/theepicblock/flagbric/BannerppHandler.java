@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import java.awt.*;
 
 public class BannerppHandler {
-	public static void onPreRender(ItemStack stack) {
-		LoomPatternRenderContext.setLoomPatterns(LoomPatternConversions.makeLoomPatternData(LoomPatternConversions.getLoomPatternTag(stack)));
-	}
+    public static void onPreRender(ItemStack stack) {
+        LoomPatternRenderContext.setLoomPatterns(LoomPatternConversions.makeLoomPatternData(LoomPatternConversions.getLoomPatternTag(stack)));
+    }
 }
