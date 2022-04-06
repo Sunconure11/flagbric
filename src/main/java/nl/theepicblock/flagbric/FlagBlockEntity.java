@@ -7,6 +7,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.BannerItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
@@ -106,10 +107,16 @@ public class FlagBlockEntity extends BlockEntity implements Inventory {
         super.readNbt(tag);
     }
 
+    private void sync() {
+        if (world instanceof ServerWorld sWorld) {
+            sWorld.getPlayers(player -> player.getBlockPos().isWithinDistance(this.getPos(), 1000)).forEach(player -> player.networkHandler.sendPacket(this.toUpdatePacket()));
+        }
+    }
+
     @Override
-    public void writeNbt(NbtCompound tag) {
-        tag.put("item", banner.writeNbt(new NbtCompound()));
-        tag.putFloat("direction", direction.asRotation());
-        super.writeNbt(tag);
+    public void writeNbt(NbtCompound nbt) {
+        super.writeNbt(nbt);
+        nbt.put("item", banner.writeNbt(new NbtCompound()));
+        nbt.putFloat("direction", direction.asRotation());
     }
 }
