@@ -1,4 +1,4 @@
-package cf.witcheskitchen.api.banner.impl;
+
 
 import net.minecraft.nbt.NbtList;
 

@@ -1,10 +1,4 @@
-package cf.witcheskitchen.api.banner;
 
-import cf.witcheskitchen.WK;
-import cf.witcheskitchen.api.banner.impl.LoomPatternContainer;
-import cf.witcheskitchen.api.banner.impl.LoomPatternsInternal;
-import cf.witcheskitchen.api.banner.loom.LoomPattern;
-import cf.witcheskitchen.api.banner.loom.LoomPatterns;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute;

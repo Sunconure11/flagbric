@@ -1,7 +1,4 @@
-package cf.witcheskitchen.api.banner.impl;
 
-import cf.witcheskitchen.api.banner.loom.LoomPattern;
-import cf.witcheskitchen.api.banner.loom.LoomPatterns;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;

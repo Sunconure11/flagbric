@@ -1,4 +1,4 @@
-package cf.witcheskitchen.api.banner.loom;
+
 
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;

@@ -1,4 +1,4 @@
-package cf.witcheskitchen.api.banner.impl;
+
 
 import java.util.Collections;
 import java.util.List;

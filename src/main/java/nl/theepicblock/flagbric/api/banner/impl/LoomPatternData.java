@@ -1,7 +1,4 @@
-package cf.witcheskitchen.api.banner.impl;
 
-
-import cf.witcheskitchen.api.banner.loom.LoomPattern;
 import net.minecraft.util.DyeColor;
 
 /**
