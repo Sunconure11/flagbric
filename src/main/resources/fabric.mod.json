@@ -5,7 +5,9 @@
   "name": "flagbric",
   "description": "flags on fabric!",
   "authors": [
-    "TheEpicBlock"
+    "TheEpicBlock",
+    "MrSterner, his inbuilt library of BannersPP helped greatly!",
+    "Sunconure11"
   ],
   "contact": {
     "homepage": "https://github.com/TheEpicBlock/flagbric/blob/master/README.md",
