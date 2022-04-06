@@ -51,7 +51,7 @@ public class FlagBlockEntity extends BlockEntity implements Inventory {
         if (slot == 0) {
             ItemStack a = banner.copy();
             banner = ItemStack.EMPTY;
-            this.toUpdatePacket();
+            this.sync();
             return a;
         } else {
             return ItemStack.EMPTY;
@@ -62,7 +62,7 @@ public class FlagBlockEntity extends BlockEntity implements Inventory {
     public void setStack(int slot, ItemStack stack) {
         if (slot == 0) {
             banner = stack;
-            this.toUpdatePacket();
+            this.sync();
         }
     }
 
@@ -74,7 +74,7 @@ public class FlagBlockEntity extends BlockEntity implements Inventory {
     @Override
     public void clear() {
         this.banner = ItemStack.EMPTY;
-        this.toUpdatePacket();
+        this.sync();
     }
 
     @Override
